@@ -78,11 +78,17 @@ class CcCountDown extends HTMLElement {
         if (value === null) return;
         this._duration = parseInt(value);
         this._currentValue = parseInt(this._duration);
+        if (this._currentValueParagraph) {
+            this._currentValueParagraph.innerText = value;
+        }
     }
 
     _setPurpose(value) {
         if (value === null) return;
         this._purpose = value;
+        if(this._purposeTitle) {
+            this._purposeTitle.innerHTML = value;
+        }
     }
 
     _startCountDown() {
