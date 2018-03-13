@@ -77,7 +77,7 @@ class CcCountDown extends HTMLElement {
     _setDuration(value) {
         if (value === null) return;
         this._duration = parseInt(value);
-        this._currentValue = parseInt(this._duration);
+        this._currentValue = this._duration;
         if (this._currentValueParagraph) {
             this._currentValueParagraph.innerText = value;
         }
@@ -93,7 +93,7 @@ class CcCountDown extends HTMLElement {
 
     _startCountDown() {
         if (this._currentValue === 0) return;
-        this._btnStart.innerText = 'démarrer';
+        this._btnStart.innerText = 'pause';
         this._handle = setInterval(() => {
             console.log('_currentValue ', this._currentValue);
             this._currentValue = this._currentValue - 1;
